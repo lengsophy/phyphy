@@ -1,0 +1,85 @@
+<template name="updateProduct">
+    <div id="wrapper">
+        <!--leftside-->
+        {{> leftside }}
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Update Products
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- /.row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form-horizontal" role="form" id="updateProducts">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="title">Product Title:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="productTitle" class="form-control required" id="title" value="{{title}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="description">Description</label>
+                                <div class="col-sm-10">
+                                    <textarea name="description" class="form-control required" rows="5" id="description" value="{{description}}"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="price">Price</label>
+                                <div class="col-sm-10">
+                                    <input type="number" name="price" class="form-control required" id="price" value="{{price}}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="category">Category</label>
+                                <div class="col-sm-10">
+                                    <select name="category" class="form-control required" id="category">
+                                        {{#each allCategory }}
+                                        <option value="{{_id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="brand">Brand</label>
+                                <div class="col-sm-10">
+                                    <select name="brand" class="form-control required" id="brand">
+                                        {{#each allBrand }}
+                                        <option value="{{_id}}">{{title}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="image">Image:</label>
+                                <div class="col-sm-10">
+                                    <input type="hidden" value="{{image_id}}" id="myimage" />
+                                    <input type="file" class="form-control" id="txtimg" placeholder="Enter url of image">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-success btn-block" id="btnupdate">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+</template>
