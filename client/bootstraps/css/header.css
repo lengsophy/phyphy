@@ -1,0 +1,9 @@
+.Active{
+	color: black;
+}
+.top-text-hover{
+	color: white;
+}
+.top-text-hover:hover{
+	color: black;
+}
