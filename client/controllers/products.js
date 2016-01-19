@@ -24,7 +24,7 @@ Template.manageproduct.events({
             description: description,
             price: price,
             categoryId:category,
-            brand_id: brand,
+            brandName: brand,
             ma_name:maini_name,
             image: img_id,
             origin:origin,
@@ -192,7 +192,7 @@ Template.updateProduct.events({
             description: description,
             price: price,
             categoryId: category,
-            brand_id: brand,
+            brandName: brand,
             image: img_id
         };
         Meteor.call('updateproducts', id, attr);
