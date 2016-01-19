@@ -10,6 +10,30 @@ Meteor.methods({
 	}
 });
 
+/* Meteor.startup(function () {
+//     // The correct way
+//     //navigator.geolocation.getCurrentPosition(success));
+var obj = [{"name": "Apparel, Textiles & Accessories"},
+{"name": "Auto & Transportation"},
+{"name": "Electronics"},
+{"name": "Machinery, Industrial Parts & Tools"},
+{"name": "Gifts, Sports & Toys"},
+{"name": "Home, Lights & Construction"},
+{"name": "Health & Beauty"},
+{"name": "Bags, Shoes & Accessories"},
+{"name": "Electrical Equipment, Components & Telecom"},
+{"name": "Agriculture & Food"},
+{"name": "Packaging, Advertising & Office"},
+{"name": "Metallurgy,Chemicals & Plastics"}];
+
+ _.each(obj, function(item) {
+      console.log("item "+item.name);
+      var attr = {
+      	name:item.name
+      }
+      categorys.insert(attr);
+      });
+});*/
 //  Meteor.startup(function () {
 // //     // The correct way
 // //     //navigator.geolocation.getCurrentPosition(success));
@@ -33,8 +57,11 @@ Meteor.methods({
 //  _.each(obj, function(item) {
 //       console.log("item "+item.name);
 //       var attr = {
-//       	name:item.name
+//       	name:item.name,
+//       	price:item.price,
+//       	image: item.image,
+//       	categoryId: "CvF2z67k52urunTk9"
 //       }
-//       categorys.insert(attr);
+//       //product.insert(attr);
 //       });
 // });

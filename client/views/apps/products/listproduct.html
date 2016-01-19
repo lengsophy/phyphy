@@ -45,13 +45,13 @@
                                     <td>{{title}}</td>
                                     <td>{{description}}</td>
                                     <td>{{price}}</td>
-                                    {{#with categoryName category_id}}
+                                    {{#with categoryName categoryId}}
                                     <td>{{name}}</td>
                                     {{/with}}
                                     {{#with brandName brand_id}}
                                     <td>{{title}}</td>
                                     {{/with}}
-                                    <td><img src="/images/{{getImage image_id}}" width="50" height="50"></td>
+                                    <td><img src="/images/{{getImage image}}" width="50" height="50"></td>
                                     <td>
                                         <a href="/admin/updateproduct/{{_id}}">
                                             <button class="btn btn-xs btn-primary" type="button"><i class="glyphicon glyphicon-pencil"></i>Edit</button>
