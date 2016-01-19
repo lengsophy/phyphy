@@ -11,3 +11,6 @@ Meteor.publish('categorys', function (){
 Meteor.publish('brands', function (){ 
   return brands.find({})
 });
+Meteor.publish('users', function (){ 
+  return users.find({})
+});

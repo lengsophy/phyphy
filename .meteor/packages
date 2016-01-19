@@ -20,11 +20,8 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 mrt:bootstrap-3
 fortawesome:fontawesome
-<<<<<<< HEAD
 accounts-password
 accounts-ui
 alanning:roles
-=======
 cfs:standard-packages
 cfs:filesystem
->>>>>>> 61b18fdd5f687c88880dca5acf4c0a263b3bd874
