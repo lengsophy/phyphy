@@ -2,10 +2,11 @@
 
 Session.set('page_msg','');
 Session.set("registerError","");
-Template.register.events({
-    'click #btnRegister': function(e, tpl){
-		e.preventDefault();
+Template.navigation.events({
+    'submit form': function(e, tpl){
+		//e.preventDefault();
 		//alert("register");
+
 			var firstname =$('#firstname').val();
 			var lastname =$('#lastname').val();
 			var username =$('#username').val();
@@ -36,11 +37,10 @@ Template.register.events({
 			Meteor.call('registerUser',firstname, lastname, email,username, password, rerole,function(err){
 				if(err){
 					console.log(err.reason);
-					Session.set("registerError",err.reason);
+					Bert.alert(error.reason, 'danger', 'fixed-top', 'fa-frown-o');
 				}else{
-					Session.set("registerError","");
-					Session.set("loginError","");
-					Router.go('login');
+					Bert.alert("Register Successful,Please loging to you account!", 'info', 'fixed-top', 'fa-frown-o');
+					Router.go('/');
 				}
 			});
 		}
@@ -49,7 +49,7 @@ Template.register.events({
 });
 
 
-Template.register.helpers({
+Template.navigation.helpers({
 
 	getmsg: function(){
 		var msg = Session.get('page_msg',msg);

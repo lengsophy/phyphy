@@ -1,5 +1,5 @@
 Session.set("loginError","");
-Template.login.events({
+Template.navigation.events({
     'submit form': function(event,tpl){
 		event.preventDefault();
         var email = $('[name=email]').val();
@@ -8,10 +8,9 @@ Template.login.events({
         Meteor.loginWithPassword(email, password, function(error){
 			if(error){
 				console.log(error.reason);
-				Session.set("loginError",error.reason);
+				Bert.alert(error.reason, 'danger', 'fixed-top', 'fa-frown-o');
 			} else {
-				Session.set("loginError","");
-				Session.set("registerError","");
+				Bert.alert("login successful!", 'success', 'fixed-top', 'fa-frown-o');
 				 var loggedInUser = Meteor.user();
 				 var group = 'mygroup';
 
@@ -19,8 +18,6 @@ Template.login.events({
 				var currentRouter2 = Session.get('profile');
 				var currentRouter3 = Session.get('addUser');
 				var currentRouter4 = Session.get('content');
-				console.log("Content ID:"+currentRouter1);
-				console.log("Content ID:"+currentRouter2);
 				if( currentRouter1 == 1){
 					Router.go('/content');
 				}
@@ -28,7 +25,7 @@ Template.login.events({
 					Router.go('/profile');
 				}
 				else if (Roles.userIsInRole(loggedInUser, ['admin'], group)) {
-					Router.go('/admin');
+					Router.go('/admin/dashboard');
 					$('.close').click();
 				}
 				else if (Roles.userIsInRole(loggedInUser, ['member'], group)) {	
@@ -45,18 +42,7 @@ Template.login.events({
 	
 });
 
-// Template.nav.events({
-	// 'click #poplogin': function(event){
-    	// //alert("jjss");
-    	// $("#squarespaceModal").modal({                    
-			// "backdrop"  : "static",
-			// "keyboard"  : true,
-			// "show"      : true   // show the modal immediately                  
-		// });
-    // }
-// });
-
-Template.login.helpers({
+Template.navigation.helpers({
 	loginError:function(){
 		var msg = Session.get("loginError");
 		if( msg ) return true;
