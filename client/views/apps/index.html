@@ -11,26 +11,14 @@
 									</h3>
 								</div>
 									<ul class="list-group">
-										<li class="list-group-item">
-											<a href="categories.html">View All Categories</a>
+										{{#each categories}}
+										<li class="list-group-item" >
+											<a href="#">{{name}}</a>
 										</li>
+										{{/each}}
+
 										<li class="list-group-item">
-											<a href="categories.html">Category 1</a>
-										</li>
-										<li class="list-group-item">
-											<a href="categories.html">Category 2</a>
-										</li>
-										<li class="list-group-item">
-											<a href="categories.html">Category 3</a>
-										</li>
-										<li class="list-group-item">
-											<a href="categories.html">Category 4</a>
-										</li>
-										<li class="list-group-item">
-											<a href="categories.html">Category 5</a>
-										</li>
-										<li class="list-group-item">
-											<a href="categories.html">Category 6</a>
+											<a href="#">View All Categories</a>
 										</li>
 									</ul>
 							</div><!-- panel-primary -->							
@@ -108,43 +96,22 @@
 							</div>
 							<div class="panel-body">
 								<div class="row">
+								{{#each newProduct}}
 								  <div class="col-sm-6 col-md-3">
 									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
+									  <img src="{{image}}" alt="...">
 									  <div class="caption text-center">
-										<h3>Product</h3>										
+										<h5>{{name}}</h5>
+										<h4>{{price}}</h4>
+										<hr>										
 									  </div><!--end caption-->
 									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
 									</div><!--end thumbnail-->
 								  </div><!--end col-->
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->								  
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->								  
+								 {{/each}}
+<!--  -->	  
 								</div><!--end row-->
+
 								<div class="pull-right">
 									<a href="#" class="btn btn-warning ">See all deals  <i class="fa fa-angle-double-right"></i></a>
 								</div>
@@ -157,42 +124,20 @@
 							</div>
 							<div class="panel-body">
 								<div class="row">
-								  <div class="col-sm-6 col-md-3">
+								{{#each popularProduct}}
+								    <div class="col-sm-6 col-md-3">
 									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
+									  <img src="{{image}}" alt="...">
 									  <div class="caption text-center">
-										<h3>Product</h3>										
+										<h5>{{name}}</h5>
+										<h4>{{price}}</h4>
+										<hr>										
 									  </div><!--end caption-->
 									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
 									</div><!--end thumbnail-->
 								  </div><!--end col-->
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->								  
-								  <div class="col-sm-6 col-md-3">
-									<div class="thumbnail">
-									  <img src="http://placehold.it/500x300" alt="...">
-									  <div class="caption text-center">
-										<h3>Product</h3>										
-									  </div><!--end caption-->
-									  <a href="product.html" class="btn btn-warning" role="button">View more <i class="fa fa-angle-right"></i></a>
-									</div><!--end thumbnail-->
-								  </div><!--end col-->								  
+								  {{/each}}
+		  
 								</div><!--end row-->
 								<div class="pull-right">
 									<a href="#" class="btn btn-warning ">See all deals  <i class="fa fa-angle-double-right"></i></a>
