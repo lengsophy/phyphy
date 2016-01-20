@@ -26,3 +26,5 @@ alanning:roles
 cfs:standard-packages
 cfs:filesystem
 themeteorchef:bert
+email
+blaze
