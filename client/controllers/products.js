@@ -7,18 +7,29 @@ Template.manageproduct.events({
         var price = tpl.$("#price").val();
         var category = tpl.$("#category").val();
         var brand = tpl.$("#brand").val();
+        var origin = tpl.$("#origin").val();
+        var grade = tpl.$("#grade").val();
+        var maini_name = tpl.$("#maini_name").val();
         var image = tpl.$("#txtimg").val();
         var img_id = Session.get('ADDIMAGEID');
         if (typeof img_id === 'undefined') {
             img_id = "";
         }
+        var ma_imageid = Session.get('ADDMA_ID');
+        if (typeof ma_imageid === 'undefined') {
+            ma_imageid = "";
+        }
         var attr = {
             title: title,
             description: description,
             price: price,
-            category_id:category,
-            brand_id: brand,
-            image_id: img_id
+            categoryId:category,
+            brandName: brand,
+            ma_name:maini_name,
+            image: img_id,
+            origin:origin,
+            grade:grade,
+            ma_image:ma_imageid
         };
         Meteor.call('insertproduct', attr,function(err){
             if(err){
@@ -29,10 +40,20 @@ Template.manageproduct.events({
         });
     },
     'change #txtimg': function(event, template) {
+        event.preventDefault();
         var files = event.target.files;
         for (var i = 0, ln = files.length; i < ln; i++) {
             images.insert(files[i], function(err, fileObj) {
                 Session.set('ADDIMAGEID', fileObj._id);
+            });
+        }
+    },
+     'change #ma_img': function(event, template) {
+        event.preventDefault();
+        var files = event.target.files;
+        for (var i = 0, ln = files.length; i < ln; i++) {
+            images.insert(files[i], function(err, fileObj) {
+                Session.set('ADDMA_ID', fileObj._id);
             });
         }
     }
@@ -170,9 +191,9 @@ Template.updateProduct.events({
             title: title,
             description: description,
             price: price,
-            category_id: category,
-            brand_id: brand,
-            image_id: img_id
+            categoryId: category,
+            brandName: brand,
+            image: img_id
         };
         Meteor.call('updateproducts', id, attr);
         Router.go("/admin/listProduct");

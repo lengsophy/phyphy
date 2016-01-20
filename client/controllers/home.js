@@ -1,9 +1,15 @@
-//Searchproduct
+
 Template.home.helpers({
-    listproducts: function(limit) {
-        return product.find({});
-    },
-    getImage: function(id) {
+	categories: function(){
+		return categorys.find({},{limit: 6});
+	},
+	newProduct:function(){
+		return product.find({},{limit: 4});
+	},
+	popularProduct:function(){
+		return product.find({},{limit: 4});
+	},
+     getImage: function(id) {
         var img = images.findOne({
             _id: id
         });
